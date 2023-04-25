@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Valorant Agent Showcase</title>
+    <style>
+     
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #2c2f33;
+      }
+      .agent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 350px;
+        margin: 20px;
+        background-color: #7289da;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .agent:hover {
+        transform: scale(1.1);
+      }
+      .agent img {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      }
+
+      .agent h2 {
+        margin: 0;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .agent p {
+        margin: 0;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        padding: 0 10px;
+      }
+      
+      .button {
+        display: block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #7289da;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .button:hover {
+        background-color: #5a68a1;
+      }
+  
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
+      <a href="index.html" class="button">Home</a>
+      <a href="#" class="button" id="save-agent">Save Agent</a>
+    </div>
+    <div class="container">
+      <a href="agents/jett.html" class="agent">
+        <div>
+          <img src="images/jett.png" alt="Jett">
+          <h2>Jett</h2>
+        </div>
+      </a>
+
+      <a href="agents/raze.html" class="agent">
+        <div>
+          <img src="images/raze.png" alt="Raze">
+          <h2>Raze</h2>
+          <p>A fiery damage dealer who excels at flushing enemies out of entrenched positions. Her explosive arsenal threatens to level the playing field.</p>
+        </div>
+      </a>
+
+      <a href="agents/viper.html" class="agent">
+        <div>
+          <img src="images/viper.png" alt="Viper">
+          <h2>Viper</h2>
+          <p>A powerful controller who can manipulate the battlefield with her poisonous chemicals. If the toxins don't kill her enemies, her mind games surely will.</p>
+        </div>
+      </a>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      <a href="index.html" class="button">
+        <img src="images/home.png" alt="Home" style="height: 20px; margin-right: 5px;">
+        Home
+      </a>
+      <button class="save-agent-button" style="margin-left: 20px;">Save Agent</button>
+    </div>
+    <script>
+      const saveAgentButton = document.querySelector('.save-agent-button');
+      saveAgentButton.addEventListener('click', () => {
+        const currentUrl = window.location.href;
+        localStorage.setItem('savedAgent', currentUrl);
+        alert('Agent saved!');
+      });
+    </script>
+  </body>
+</html>
