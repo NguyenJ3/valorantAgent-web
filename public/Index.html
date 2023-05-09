@@ -75,52 +75,105 @@
       .button:hover {
         background-color: #5a68a1;
       }
+
+      .agent.hidden {
+        display: none;
+      }
   
     </style>
-  </head>
-  <body>
-    <div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
-      <a href="index.html" class="button">Home</a>
-      <a href="#" class="button" id="save-agent">Save Agent</a>
-    </div>
-    <div class="container">
-      <a href="agents/jett.html" class="agent">
-        <div>
-          <img src="images/jett.png" alt="Jett">
-          <h2>Jett</h2>
-        </div>
-      </a>
+</head>
+<body>
+  <form id="search-form">
+    <input type="text" placeholder="Search agents..." id="search-input" />
+    <button type="submit" id="search-button">Search</button>
+  </form>
+ 
 
-      <a href="agents/raze.html" class="agent">
-        <div>
-          <img src="images/raze.png" alt="Raze">
-          <h2>Raze</h2>
-          <p>A fiery damage dealer who excels at flushing enemies out of entrenched positions. Her explosive arsenal threatens to level the playing field.</p>
-        </div>
-      </a>
+  <div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
+    <a href="index.html" class="button">Home</a>
+    <a href="#" class="button" id="save-agent">Save Agent</a>
+  </div>
 
-      <a href="agents/viper.html" class="agent">
-        <div>
-          <img src="images/viper.png" alt="Viper">
-          <h2>Viper</h2>
-          <p>A powerful controller who can manipulate the battlefield with her poisonous chemicals. If the toxins don't kill her enemies, her mind games surely will.</p>
-        </div>
-      </a>
-    </div>
-    <div style="display: flex; justify-content: center; margin-top: 20px;">
-      <a href="index.html" class="button">
-        <img src="images/home.png" alt="Home" style="height: 20px; margin-right: 5px;">
-        Home
-      </a>
-      <button class="save-agent-button" style="margin-left: 20px;">Save Agent</button>
-    </div>
-    <script>
-      const saveAgentButton = document.querySelector('.save-agent-button');
-      saveAgentButton.addEventListener('click', () => {
-        const currentUrl = window.location.href;
-        localStorage.setItem('savedAgent', currentUrl);
-        alert('Agent saved!');
+  <div class="container">
+    
+  <div id="search-results" class="container"></div>
+    <a href="agents/jett.html" class="agent">
+      <div>
+        <img src="images/jett.png" alt="Jett">
+        <h2>Jett</h2>
+      </div>
+    </a>
+
+    <a href="agents/raze.html" class="agent">
+      <div>
+        <img src="images/raze.png" alt="Raze">
+        <h2>Raze</h2>
+        <p>A fiery damage dealer who excels at flushing enemies out of entrenched positions. Her explosive arsenal threatens to level the playing field.</p>
+      </div>
+    </a>
+
+    <a href="agents/viper.html" class="agent">
+      <div>
+        <img src="images/viper.png" alt="Viper">
+        <h2>Viper</h2>
+        <p>A powerful controller who can manipulate the battlefield with her poisonous chemicals. If the toxins don't kill her enemies, her mind games surely will.</p>
+      </div>
+    </a>
+  </div>
+
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="index.html" class="button">
+      <img src="images/home.png" alt="Home" style="height: 20px; margin-right: 5px;">
+      Home
+    </a>
+    <button class="save-agent-button" style="margin-left: 20px;">Save Agent</button>
+  </div>
+
+  <script src="search.js"></script>
+  <script>
+ const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  if (!searchTerm) {
+    searchResults.innerHTML = '';
+    document.querySelectorAll('.agent.hidden').forEach(agent => agent.classList.remove('hidden'));
+    return;
+  }
+  fetch(`/api/search?searchTerm=${searchTerm}`)
+    .then(response => response.json())
+    .then(data => {
+      let resultsHtml = '';
+      data.forEach(agent => {
+        if (!document.querySelector(`a[href="${agent.url}"]`)) {
+          resultsHtml += `
+            <a href="${agent.url}" class="agent">
+              <div>
+                <img src="${agent.image}" alt="${agent.name}">
+                <h2>${agent.name}</h2>
+                <p>${agent.role}</p>
+              </div>
+            </a>
+          `;
+        }
       });
-    </script>
-  </body>
+      searchResults.innerHTML = resultsHtml;
+      // Hide agents that do not match the search results
+      document.querySelectorAll('.agent').forEach(agent => {
+        if (!agent.querySelector('h2').textContent.toLowerCase().includes(searchTerm)) {
+          agent.classList.add('hidden');
+        } else {
+          agent.classList.remove('hidden');
+        }
+      });
+    })
+    .catch(error => console.error(error));
+});
+
+</script>
+
+</body>
 </html>
