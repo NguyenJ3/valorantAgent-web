@@ -1,15 +1,41 @@
-const express = require('express');
-const agents = require('./agents.json');
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
 
-const app = express();
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  if (!searchTerm) {
+    // If search term is empty, show all agents
+    document.querySelectorAll('.agent').forEach(agent => agent.classList.remove('hidden'));
+    searchResults.innerHTML = '';
+    return;
+  }
+  fetch(`/api/search?searchTerm=${searchTerm}`)
+    .then(response => response.json())
+    .then(data => {
+      let resultsHtml = '';
+      data.forEach(agent => {
+        resultsHtml += `
+          <a href="${agent.url}" class="agent">
+            <div>
+              <img src="${agent.image}" alt="${agent.name}">
+              <h2>${agent.name}</h2>
+              <p>${agent.role}</p>
+            </div>
+          </a>
+        `;
+      });
+      searchResults.innerHTML = resultsHtml;
 
-
-app.get('/api/search', (req, res) => {
-    const searchTerm = req.query.searchTerm.toLowerCase();
-    const results = agents.filter(agent => {
-      const name = agent.name.toLowerCase();
-      const role = agent.role.toLowerCase();
-      return name.includes(searchTerm) || role.includes(searchTerm);
-    });
-    res.json(results);
-  });
+      // Hide agents that do not match the search results
+      document.querySelectorAll('.agent').forEach(agent => {
+        if (!agent.querySelector('h2').textContent.toLowerCase().includes(searchTerm)) {
+          agent.classList.add('hidden');
+        } else {
+          agent.classList.remove('hidden');
+        }
+      });
+    })
+    .catch(error => console.error(error));
+});
