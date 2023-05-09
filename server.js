@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const agents = require('./public/api/agents.json');
+
 
 const app = express();
 
@@ -12,6 +14,13 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html'
 // Serve the Jett page
 app.get('/jett', function (req, res) {
   res.sendFile(path.join(__dirname, 'agents/jett.html'));
+});
+
+//serve the api search
+app.get('/api/search', (req, res) => {
+  const searchTerm = req.query.searchTerm.toLowerCase();
+  const filteredAgents = agents.filter(agent => agent.name.toLowerCase().includes(searchTerm) || agent.role.toLowerCase().includes(searchTerm));
+  res.json(filteredAgents);
 });
 
 // Start the server
