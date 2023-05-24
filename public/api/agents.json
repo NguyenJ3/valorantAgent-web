@@ -7,6 +7,19 @@
       "role": "Duelist",
       "image": "images/jett.png",
       "url": "agents/jett.html"
+    },
+
+    {
+      "name": "Raze",
+      "url": "agents/raze.html",
+      "image": "images/raze.jpg",
+      "role": "Duelist"
+    },
+    {
+      "name": "Viper",
+      "url": "agents/viper.html",
+      "image": "images/viper.jpg",
+      "role": "Controller"
     }
 
 ]
