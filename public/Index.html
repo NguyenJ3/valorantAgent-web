@@ -79,6 +79,11 @@
       .agent.hidden {
         display: none;
       }
+
+      /* Styles for the Generate Agent button */
+      .generate-agent-button {
+      outline: none; /* Remove the outline */
+      }
   
     </style>
 </head>
@@ -89,45 +94,37 @@
   </form>
  
 
-  <div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
-    <a href="index.html" class="button">Home</a>
-    <a href="#" class="button" id="save-agent">Save Agent</a>
-  </div>
+<!-- index.html -->
+<div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
+  <a href="index.html" class="button">Home</a>
+  <a href="#" class="button" id="save-agent">Save Agent</a>
+  <button id="generate-button">Generate Agent</button>
+</div>
 
   <div class="container">
     
   <div id="search-results" class="container"></div>
-    <a href="agents/jett.html" class="agent">
-      <div>
-        <img src="images/jett.png" alt="Jett">
-        <h2>Jett</h2>
-      </div>
-    </a>
+  <a href="agents/jett.html" class="agent">
+    <div>
+      <img src="images/jett.png" alt="Jett">
+      <h2>Jett</h2>
+    </div>
+  </a>
+  
+  <a href="agents/raze.html" class="agent">
+    <div>
+      <img src="images/raze.jpg" alt="Raze">
+      <h2>Raze</h2>
+    </div>
+  </a>
+  
+  <a href="agents/viper.html" class="agent">
+    <div>
+      <img src="images/viper.jpg" alt="Viper">
+      <h2>Viper</h2>
+    </div>
+  </a>
 
-    <a href="agents/raze.html" class="agent">
-      <div>
-        <img src="images/raze.png" alt="Raze">
-        <h2>Raze</h2>
-        <p>A fiery damage dealer who excels at flushing enemies out of entrenched positions. Her explosive arsenal threatens to level the playing field.</p>
-      </div>
-    </a>
-
-    <a href="agents/viper.html" class="agent">
-      <div>
-        <img src="images/viper.png" alt="Viper">
-        <h2>Viper</h2>
-        <p>A powerful controller who can manipulate the battlefield with her poisonous chemicals. If the toxins don't kill her enemies, her mind games surely will.</p>
-      </div>
-    </a>
-  </div>
-
-  <div style="display: flex; justify-content: center; margin-top: 20px;">
-    <a href="index.html" class="button">
-      <img src="images/home.png" alt="Home" style="height: 20px; margin-right: 5px;">
-      Home
-    </a>
-    <button class="save-agent-button" style="margin-left: 20px;">Save Agent</button>
-  </div>
 
   <script src="search.js"></script>
   <script>
