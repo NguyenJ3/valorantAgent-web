@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .home-button {
+        display: inline-block;
+        background-color: #7289DA;
+        color: #FFFFFF;
+        padding: 12px 24px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-top: 20px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+    
+      .home-button:hover {
+        background-color: #5a68a1;
+      }
+
+      .save-button {
+        display: inline-block;
+        background-color: #7289DA;
+        color: #FFFFFF;
+        padding: 12px 24px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-top: 20px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        margin-left: 20px;
+      }
+
+      .save-button:hover {
+        background-color: #5a68a1;
+      }
+      
+      .container {
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .image-wrapper {
+        position: relative;
+        margin-right: 20px;
+      }
+      
+      img {
+        width: 300px; /* Adjust the width to your desired size */
+        height: auto;
+        border-radius: 8px;
+      }
+      
+      .content {
+        flex-grow: 1;
+      }
+      
+      .agent-name {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+    
+    <script>
+      function saveAgent() {
+        // Get the agent data to save
+        const agentData = {
+          name: "Viper",
+          description: "A powerful controller who can manipulate the battlefield with her poisonous chemicals. If the toxins don't kill her enemies, her mind games surely will.",
+          image: "../images/viper.png"
+        };
+
+        // Save the agent data to local storage
+        localStorage.setItem("savedAgent", JSON.stringify(agentData));
+
+        // Show a confirmation message to the user
+        alert("Agent saved successfully!");
+      }
+    </script>
+    
+    <meta charset="UTF-8">
+    <title>Viper</title>
+  </head>
+  <body>
+    <a href="/" class="home-button">Home</a>
+    <button class="save-button" onclick="saveAgent()">Save Agent</button>
+ <h1> Viper</h1>
+    <div class="container">
+      <div class="image-wrapper">
+        <img src="../images/viper.jpg" alt="Viper">
+        <h1 class="agent-name">Viper</h1>
+        <p>A powerful controller who can manipulate the battlefield with her poisonous chemicals. If the toxins don't kill her enemies, her mind games surely will.</p>
+      </div>
+      
+      <div class="content">
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
