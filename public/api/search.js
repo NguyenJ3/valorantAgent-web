@@ -39,3 +39,26 @@ searchForm.addEventListener('submit', (event) => {
     })
     .catch(error => console.error(error));
 });
+
+function generateAgent() {
+  document.getElementById('generate-button').addEventListener('click', generateAgent);
+  const agents = [
+    { name: "Jett", url: "agents/jett.html" },
+    { name: "Raze", url: "agents/Raze.html" },
+    { name: "Viper", url: "agents/viper.html" }
+    // Add more agents as needed
+  ];
+
+  // Generate a random index to select a random agent
+  const randomIndex = Math.floor(Math.random() * agents.length);
+
+  // Get the URL of the randomly chosen agent
+  const randomAgentUrl = agents[randomIndex].url;
+
+  // Redirect the user to the randomly chosen agent's website
+  window.location.href = randomAgentUrl;
+}
+
+// Find the generate button element and add an event listener
+const generateButton = document.getElementById('generate-button');
+generateButton.addEventListener('click', generateAgent);
