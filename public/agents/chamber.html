@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+
+
+
+    
+    <script>
+      function saveAgent() {
+        // Get the agent data to save
+        const agentData = {
+          name: "Chamber",
+          description: "A master of deception and subterfuge, Chamber controls the battlefield with cleverly placed traps and an arsenal of secretive gadgets. His stealthy approach and explosive surprises keep enemies guessing, making him a formidable threat to anyone who underestimates his cunning tactics.A strategic leader who controls the battlefield with precise airstrikes and incendiary grenades. Chamber's expert use of utility denies enemies access and creates opportunities for his team to dominate the map.",
+          image: "../images/chamber.png"
+        };
+
+        // Save the agent data to local storage
+        localStorage.setItem("savedAgent", JSON.stringify(agentData));
+
+        // Show a confirmation message to the user
+        alert("Agent saved successfully!");
+      }
+    </script>
+    
+    <a href="/" class="home-button">Home</a>
+    <button class="save-button" onclick="saveAgent()">Save Agent</button>
+    <meta charset="UTF-8">
+    <title>Chamber</title>
+  </head>
+  <body>
+    <h1>Chamber</h1>
+    <img src="../images/chamberfull.png" alt="Chamber">
+    <p>A master of deception and subterfuge, Chamber controls the battlefield with cleverly placed traps and an arsenal of secretive gadgets. His stealthy approach and explosive surprises keep enemies guessing, making him a formidable threat to anyone who underestimates his cunning tactics.</p>
+  </body>
+</html>
