@@ -1,25 +1,139 @@
-
-
 [
+  {
+    "name": "Jett",
+    "role": "Duelist",
+    "image": "images/jett.png",
+    "url": "agents/jett.json"
+  },
+  {
+    "name": "Raze",
+    "role": "Duelist",
+    "image": "images/raze.jpg",
+    "url": "agents/raze.json"
+  },
+  {
+    "name": "Viper",
+    "role": "Controller",
+    "image": "images/viper.jpg",
+    "url": "agents/viper.json"
+  },
 
-    {
-      "name": "Jett",
-      "role": "Duelist",
-      "image": "images/jett.png",
-      "url": "agents/jett.html"
-    },
+  {
+    "name": "Reyna",
+    "role": "Duelist",
+    "image": "images/reyna.jpg",
+    "url": "agents/reyna.json"
+  },
+  {
+    "name": "Brimstone",
+    "role": "Controller",
+    "image": "images/brimstone.jpg",
+    "url": "/agents/brimstone.html"
+  },
 
-    {
-      "name": "Raze",
-      "url": "agents/raze.html",
-      "image": "images/raze.jpg",
-      "role": "Duelist"
-    },
-    {
-      "name": "Viper",
-      "url": "agents/viper.html",
-      "image": "images/viper.jpg",
-      "role": "Controller"
-    }
+  {
+    "name": "Omen",
+    "role": "Controller",
+    "image": "images/omen.jpg",
+    "url": "/agents/omen.html"
+  },
+
+  {
+    "name": "Killjoy",
+    "role": "Sentinel",
+    "image": "images/killjoy.jpg",
+    "url": "/agents/killjoy.html"
+  },
+
+  {
+    "name": "Skye",
+    "role": "Initiator",
+    "image": "images/skye.png",
+    "url": "/agents/skye.html"
+  },
+
+  {
+    "name": "Chamber",
+    "role": "Sentinel",
+    "image": "images/chamber.png",
+    "url": "/agents/chamber.html"
+  },
+
+  {
+    "name": "Fade",
+    "role": "Initiator",
+    "image": "images/fade.png",
+    "url": "/agents/fade.html"
+  },
+
+  {
+    "name": "Neon",
+    "role": "Duelist",
+    "image": "images/neon.png",
+    "url": "/agents/neon.html"
+  },
+
+  {
+    "name": "Sage",
+    "role": "Sentinel",
+    "image": "images/sage.jpg",
+    "url": "/agents/sage.html"
+  },
+
+  {
+    "name": "Phoenix",
+    "role": "Duelist",
+    "image": "images/phoenix.jpg",
+    "url": "/agents/phoenix.html"
+  },
+
+  {
+    "name": "Gekko",
+    "role": "Initiator",
+    "image": "images/gekko.png",
+    "url": "/agents/gekko.html"
+  },
+
+  {
+    "name": "Yoru",
+    "role": "Duelist",
+    "image": "images/yoru.png",
+    "url": "/agents/yoru.html"
+  },
+
+  {
+    "name": "Cypher",
+    "role": "Sentinel",
+    "image": "images/cypher.png",
+    "url": "/agents/cypher.html"
+  },
+
+  {
+    "name": "Sova",
+    "role": "Initiator",
+    "image": "images/sova.jpg",
+    "url": "/agents/sova.html"
+  },
+
+  {
+    "name": "Breach",
+    "role": "Initiator",
+    "image": "images/breach.jpg",
+    "url": "/agents/breach.html"
+  },
+
+  {
+    "name": "Astra",
+    "role": "Controller",
+    "image": "images/astra.jpg",
+    "url": "/agents/astra.html"
+  },
+
+  {
+    "name": "Harbor",
+    "role": "Controller",
+    "image": "images/harbor.jpg",
+    "url": "/agents/harbor.html"
+  }
 
 ]
