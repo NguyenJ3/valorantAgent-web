@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+
+
+
+    
+    <script>
+      function saveAgent() {
+        // Get the agent data to save
+        const agentData = {
+          name: "Gekko",
+          description: " Gekko and his five monstrous allies. Together, they dominate the battlefield with relentless power and unmatched versatility. With each monster possessing unique abilities, Gekko strikes fear into enemies' hearts, leaving no chance for escape. Prepare for chaos and destruction in the world of Valorant.",
+          image: "../images/gekko.jpg"
+        };
+
+        // Save the agent data to local storage
+        localStorage.setItem("savedAgent", JSON.stringify(agentData));
+
+        // Show a confirmation message to the user
+        alert("Agent saved successfully!");
+      }
+    </script>
+    
+    <a href="/" class="home-button">Home</a>
+    <button class="save-button" onclick="saveAgent()">Save Agent</button>
+    <meta charset="UTF-8">
+    <title>Gekko</title>
+  </head>
+  <body>
+    <h1>Gekko</h1>
+    <img src="../images/gekkofull.jpg" alt="Gekko">
+    <p> Gekko and his five monstrous allies. Together, they dominate the battlefield with relentless power and unmatched versatility. With each monster possessing unique abilities, Gekko strikes fear into enemies' hearts, leaving no chance for escape. Prepare for chaos and destruction in the world of Valorant.</p>
+  </body>
+</html>
