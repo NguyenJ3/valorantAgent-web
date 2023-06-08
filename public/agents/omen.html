@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+
+
+
+    
+    <script>
+      function saveAgent() {
+        // Get the agent data to save
+        const agentData = {
+          name: "Omen",
+          description: "A shadowy infiltrator who manipulates darkness to blind and confuse his enemies. Omen can teleport across the map and create chaos with his smoke screens and otherworldly abilities, making him a formidable threat in any engagement.",
+          image: "../images/omen.jpg"
+        };
+
+        // Save the agent data to local storage
+        localStorage.setItem("savedAgent", JSON.stringify(agentData));
+
+        // Show a confirmation message to the user
+        alert("Agent saved successfully!");
+      }
+    </script>
+    
+    <a href="/" class="home-button">Home</a>
+    <button class="save-button" onclick="saveAgent()">Save Agent</button>
+    <meta charset="UTF-8">
+    <title>Omen</title>
+  </head>
+  <body>
+    <h1>Omen</h1>
+    <img src="../images/omenfull.jpg" alt="Omen">
+    <p>A shadowy infiltrator who manipulates darkness to blind and confuse his enemies. Omen can teleport across the map and create chaos with his smoke screens and otherworldly abilities, making him a formidable threat in any engagement.</p>
+  </body>
+</html>
