@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+
+
+
+    
+    <script>
+      function saveAgent() {
+        // Get the agent data to save
+        const agentData = {
+          name: "Sage",
+          description: "The tranquil healer, Sage mends wounds and revives teammates, shifting the tide of battle. With barriers and slowing orbs, she controls space and offers vital support. A guardian of life, Sage brings balance to the fight.",
+          image: "../images/sage.jpg"
+        };
+
+        // Save the agent data to local storage
+        localStorage.setItem("savedAgent", JSON.stringify(agentData));
+
+        // Show a confirmation message to the user
+        alert("Agent saved successfully!");
+      }
+    </script>
+    
+    <a href="/" class="home-button">Home</a>
+    <button class="save-button" onclick="saveAgent()">Save Agent</button>
+    <meta charset="UTF-8">
+    <title>Sage</title>
+  </head>
+  <body>
+    <h1>Sage</h1>
+    <img src="../images/sagefull.jpg" alt="Sage">
+    <p>The tranquil healer, Sage mends wounds and revives teammates, shifting the tide of battle. With barriers and slowing orbs, she controls space and offers vital support. A guardian of life, Sage brings balance to the fight.</p>
+  </body>
+</html>
