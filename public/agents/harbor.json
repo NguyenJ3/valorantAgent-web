@@ -1,0 +1,6 @@
+{
+    "name": "Harbor",
+    "role": "Controller",
+    "image": "images/harbor.jpg",
+    "url": "/agents/harbor.html"
+  }
