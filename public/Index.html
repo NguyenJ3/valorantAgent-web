@@ -3,174 +3,275 @@
   <head>
     <meta charset="UTF-8">
     <title>Valorant Agent Showcase</title>
-    <style>
-     
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-      }
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #2c2f33;
-      }
-      .agent {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 250px;
-        height: 350px;
-        margin: 20px;
-        background-color: #7289da;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
+    <link rel="stylesheet" href="/css/homepage.css">
+  </head>
+  <body>
+    <form id="search-form">
+      <input type="text" placeholder="Search agents..." id="search-input" />
+      <button type="submit" id="search-button">Search</button>
+    </form>
 
-      .agent:hover {
-        transform: scale(1.1);
-      }
-      .agent img {
-      display: block;
-      margin: 0 auto;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      }
-
-      .agent h2 {
-        margin: 0;
-        color: #fff;
-        text-align: center;
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-      .agent p {
-        margin: 0;
-        color: #fff;
-        text-align: center;
-        font-size: 14px;
-        padding: 0 10px;
-      }
+    <div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
+      <a href="index.html" class="button">Home</a>
+      <a href="#" class="button" id="save-agent">Go to Saved Agent</a>
       
-      .button {
-        display: block;
-        margin: 10px;
-        padding: 10px 20px;
-        background-color: #7289da;
-        color: #fff;
-        text-decoration: none;
-        text-align: center;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      
-      .button:hover {
-        background-color: #5a68a1;
-      }
+      <div class="dropdown">
+        <button class="button">Choose Agent</button>
+        <div class="dropdown-content">
+          <a href="#">Jett</a>
+          <a href="#">Raze</a>
+          <a href="#">Viper</a>
+          <a href="#">Reyna</a>
+          <a href="#">Brimstone</a>
+          <a href="#">Omen</a>
+          <a href="#">Killjoy</a>
+          <a href="#">Skye</a>
+          <a href="#">Chamber</a>
+          <a href="#">Fade</a>
+          <a href="#">Neon</a>
+          <a href="#">Sage</a>
+          <a href="#">Phoenix</a>
+          <a href="#">Gekko</a>
+          <a href="#">KAY/O</a>
+          <a href="#">Yoru</a>
+          <a href="#">Cypher</a>
+          <a href="#">Sova</a>
+          <a href="#">Breach</a>
+          <a href="#">Astra</a>
+          <a href="#">Harbor</a>
+          <!-- Add other agents here -->
+        </div>
+      </div>
 
-      .agent.hidden {
-        display: none;
-      }
+      <button id="generate-button" class="button">Generate Agent</button>
+    </div>
 
-      /* Styles for the Generate Agent button */
-      .generate-agent-button {
-      outline: none; /* Remove the outline */
-      }
+    <div class="container">
+      <div id="search-results" class="container"></div>
+
+      <!-- Jett agent block -->
+      <a href="agents/jett.html" class="agent" data-agent-name="Jett">
+        <div>
+          <img src="images/jett.jpg" alt="Jett">
+          <h2>Jett</h2>
+          <p>Duelist</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <!-- Raze agent block -->
+      <a href="agents/raze.html" class="agent" data-agent-name="Raze">
+        <div>
+          <img src="images/raze.jpg" alt="Raze">
+          <h2>Raze</h2>
+          <p>Duelist</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <!-- Viper agent block -->
+      <a href="agents/viper.html" class="agent" data-agent-name="Viper">
+        <div>
+          <img src="images/viper.jpg" alt="Viper">
+          <h2>Viper</h2>
+          <p>Controller</p> <!-- Role added -->
+        </div>
+      </a>
+
+
+      <!-- Reyna agent block -->
+      <a href="agents/reyna.html" class="agent" data-agent-name="Reyna">
+        <div>
+          <img src="images/reyna.jpg" alt="Reyna">
+          <h2>Reyna</h2>
+          <p>Duelist</p> <!-- Role added -->
+        </div>
+      </a>      
+
+
+      <!-- Brimstone agent block -->
+      <a href="agents/brimstone.html" class="agent" data-agent-name="Brimstone">
+        <div>
+          <img src="images/brimstone.jpg" alt="Brimstone">
+          <h2>Brimstone</h2>
+          <p>Controller</p> <!-- Role added -->
+        </div>
+      </a>
+
+
+      <a href="agents/omen.html" class="agent" data-agent-name="Omen">
+        <div>
+          <img src="images/omen.jpg" alt="Omen">
+          <h2>Omen</h2>
+          <p>Controller</p> <!-- Role added -->
+        </div>
+      </a>
+
+
+      <a href="agents/killjoy.html" class="agent" data-agent-name="Killjoy">
+        <div>
+          <img src="images/killjoy.jpg" alt="Killjoy">
+          <h2>Killjoy</h2>
+          <p>Sentinel</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/skye.html" class="agent" data-agent-name="Skye">
+        <div>
+          <img src="images/skye.png" alt="Skye">
+          <h2>Skye</h2>
+          <p>Initiator</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/chamber.html" class="agent" data-agent-name="Chamber">
+        <div>
+          <img src="images/chamber.png" alt="Chamber">
+          <h2>Chamber</h2>
+          <p>Sentinel</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/fade.html" class="agent" data-agent-name="Fade">
+        <div>
+          <img src="images/fade.png" alt="Fade">
+          <h2> Fade</h2>
+          <p>Initiator</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/neon.html" class="agent" data-agent-name="Neon">
+        <div>
+          <img src="images/neon.png" alt="Neon">
+          <h2>Neon</h2>
+          <p>Duelist</p> <!-- Role added -->
+        </div>
+      </a>      
+
+      <a href="agents/sage.html" class="agent" data-agent-name="Sage">
+        <div>
+          <img src="images/sage.png" alt="Sage">
+          <h2>Sage</h2>
+          <p>Sentinel</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/phoenix.html" class="agent" data-agent-name="Phoenix">
+        <div>
+          <img src="images/phoenix.jpg" alt="Phoenix">
+          <h2>Phoenix</h2>
+          <p>Duelist</p> <!-- Role added -->
+        </div>
+      </a>     
+
+      <a href="agents/gekko.html" class="agent" data-agent-name="Gekko">
+        <div>
+          <img src="images/gekko.png" alt="Gekko">
+          <h2>Gekko</h2>
+          <p>Initiator</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/kayo.html" class="agent" data-agent-name="KAY/O">
+        <div>
+          <img src="images/kayo.jpg" alt="KAY/O">
+          <h2>KAY/O</h2>
+          <p>Initiator</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/yoru.html" class="agent" data-agent-name="Yoru">
+        <div>
+          <img src="images/yoru.png" alt="yoru">
+          <h2>Yoru</h2>
+          <p>Duelist</p> <!-- Role added -->
+        </div>
+      </a>   
+
+      <a href="agents/cypher.html" class="agent" data-agent-name="Cypher">
+        <div>
+          <img src="images/cypher.png" alt="Cypher">
+          <h2>Cypher</h2>
+          <p>Sentinel</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/sova.html" class="agent" data-agent-name="Sova">
+        <div>
+          <img src="images/sova.jpg" alt="Sova">
+          <h2>Sova</h2>
+          <p>Initiator</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/breach.html" class="agent" data-agent-name="Breach">
+        <div>
+          <img src="images/breach.jpg" alt="Sova">
+          <h2>Breach</h2>
+          <p>Initiator</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/astra.html" class="agent" data-agent-name="Astra">
+        <div>
+          <img src="images/astra.jpg" alt="Astra">
+          <h2>Viper</h2>
+          <p>Controller</p> <!-- Role added -->
+        </div>
+      </a>
+
+      <a href="agents/harbor.html" class="agent" data-agent-name="Harbor">
+        <div>
+          <img src="images/harbor.jpg" alt="Harbor">
+          <h2>Viper</h2>
+          <p>Controller</p> <!-- Role added -->
+        </div>
+      </a>
+
+
+    </div>
+
   
-    </style>
-</head>
-<body>
-  <form id="search-form">
-    <input type="text" placeholder="Search agents..." id="search-input" />
-    <button type="submit" id="search-button">Search</button>
-  </form>
- 
-
-<!-- index.html -->
-<div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
-  <a href="index.html" class="button">Home</a>
-  <a href="#" class="button" id="save-agent">Save Agent</a>
-  <button id="generate-button">Generate Agent</button>
-</div>
-
-  <div class="container">
+    <script src="search.js"></script>
+    <script>
+      const saveAgentButton = document.getElementById('save-agent');
     
-  <div id="search-results" class="container"></div>
-  <a href="agents/jett.html" class="agent">
-    <div>
-      <img src="images/jett.png" alt="Jett">
-      <h2>Jett</h2>
-    </div>
-  </a>
-  
-  <a href="agents/raze.html" class="agent">
-    <div>
-      <img src="images/raze.jpg" alt="Raze">
-      <h2>Raze</h2>
-    </div>
-  </a>
-  
-  <a href="agents/viper.html" class="agent">
-    <div>
-      <img src="images/viper.jpg" alt="Viper">
-      <h2>Viper</h2>
-    </div>
-  </a>
-
-
-  <script src="search.js"></script>
-  <script>
- const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
-
-searchForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const searchTerm = searchInput.value.trim().toLowerCase();
-  if (!searchTerm) {
-    searchResults.innerHTML = '';
-    document.querySelectorAll('.agent.hidden').forEach(agent => agent.classList.remove('hidden'));
-    return;
-  }
-  fetch(`/api/search?searchTerm=${searchTerm}`)
-    .then(response => response.json())
-    .then(data => {
-      let resultsHtml = '';
-      data.forEach(agent => {
-        if (!document.querySelector(`a[href="${agent.url}"]`)) {
-          resultsHtml += `
-            <a href="${agent.url}" class="agent">
-              <div>
-                <img src="${agent.image}" alt="${agent.name}">
-                <h2>${agent.name}</h2>
-                <p>${agent.role}</p>
-              </div>
-            </a>
-          `;
-        }
+      document.querySelectorAll('.dropdown-content a').forEach((agent) => {
+        agent.addEventListener('click', function(event) {
+          event.preventDefault();
+    
+          const agentName = this.textContent;
+          const agentElement = document.querySelector(`.agent[data-agent-name="${agentName}"]`);
+          
+          if (agentElement) {
+            const agentData = {
+              name: agentName,
+              url: agentElement.href,
+              image: agentElement.querySelector('img').src,
+              role: agentElement.querySelector('p').textContent
+            };
+            localStorage.setItem('savedAgent', JSON.stringify(agentData));
+            alert(`Agent ${agentName} has been saved.`);
+          } else {
+            alert('Could not find agent data.');
+          }
+        });
       });
-      searchResults.innerHTML = resultsHtml;
-      // Hide agents that do not match the search results
-      document.querySelectorAll('.agent').forEach(agent => {
-        if (!agent.querySelector('h2').textContent.toLowerCase().includes(searchTerm)) {
-          agent.classList.add('hidden');
+    
+      saveAgentButton.addEventListener('click', function(event) {
+        event.preventDefault();
+    
+        // Get the saved agent's data from localStorage
+        const savedAgentData = localStorage.getItem('savedAgent');
+    
+        // If there is a saved agent, redirect to the saved agent's page
+        if (savedAgentData) {
+          const agentData = JSON.parse(savedAgentData);
+          window.location.href = agentData.url;
         } else {
-          agent.classList.remove('hidden');
+          alert('Please save an agent first.');
         }
       });
-    })
-    .catch(error => console.error(error));
-});
-
-</script>
-
-</body>
+    </script>
+    
+    
+  </body>
 </html>
